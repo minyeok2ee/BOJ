@@ -45,45 +45,7 @@ int main()
         {
             break;
         }
-        // vector<int> prime;
-        // for (int i = 2; i <= n; i++)
-        // {
-        //     if (arr[i] != 0)
-        //     {
-        //         prime.push_back(arr[i]);
-        //     }
-        // }
-
-        // pair<int, int> result(0, 0);
-        // for (int i = 0; i < prime.size(); i++)
-        // {
-        //     for (int j = 0; j <= i; j++)
-        //     {
-        //         if (prime[i] + prime[j] == n)
-        //         {
-        //             if (result.second - result.first <= prime[i] - prime[j])
-        //             {
-        //                 result.first = prime[j];
-        //                 result.second = prime[i];
-        //             }
-        //         }
-        //     }
-        //     if (prime[i] > n)
-        //     {
-        //         break;
-        //     }
-        // }
-
-        // if (result.first == 0 && result.second == 0)
-        // {
-        //     cout << "Goldbach's conjecture is worng.\n";
-        // }
-        // else
-        // {
-        //     cout << n << " = " << result.first << " + " << result.second << '\n';
-        // }
-
-
+        
         for (int i = 0; i < odd_prime.size(); i++)
         {
             if (arr[n - odd_prime[i]] == n - odd_prime[i])
