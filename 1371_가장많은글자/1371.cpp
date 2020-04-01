@@ -6,13 +6,14 @@ int main()
 {
     char c;
     vector<int> cnt_alphabet(26);
-        while (cin >> c)
+    while (cin >> c)
     {
         if ('a' <= c && c <= 'z')
         {
             cnt_alphabet[c - 'a']++;
         }
     }
+
     int max_element(0);
     vector<int> max_index; 
     for (int i = 0; i < 26; i++)
@@ -37,5 +38,6 @@ int main()
         cout << char(max_index[i] + 'a');
     }
     cout << '\n';
+    
     return 0;
 }
