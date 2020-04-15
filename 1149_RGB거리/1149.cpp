@@ -3,38 +3,28 @@
 using namespace std;
 #define MAX 1000
 
-int main() 
+int main()
 {
 	cin.tie(0);
 	ios_base::sync_with_stdio(0);
-	int cost[MAX + 1][3 + 1];
+
+	int dp[MAX + 1][4];
 	int n;
 	cin >> n;
 
-	for (int i = 1; i <= n; i++) 
-    {
-		for (int j = 1; j <= 3; j++) 
-        {
-			cin >> cost[i][j];
-			if (i != 1) 
-            {
-				if (j == 1) 
-                {
-					cost[i][j] += min(cost[i - 1][j + 1], cost[i - 1][j + 2]);
-				}
-				else if(j == 2) 
-                {
-					cost[i][j] += min(cost[i - 1][j - 1], cost[i - 1][j + 1]);
-
-				}
-				else 
-                {
-					cost[i][j] += min(cost[i - 1][j - 1], cost[i - 1][j - 2]);
-				}
-			}
+	for (int i = 1; i <= n; i++)
+	{
+		cin >> dp[i][1] >> dp[i][2] >> dp[i][3];
+		if (i == 1)
+		{
+			continue;
 		}
+
+		dp[i][1] += min(dp[i - 1][2], dp[i - 1][3]);
+		dp[i][2] += min(dp[i - 1][1], dp[i - 1][3]);
+		dp[i][3] += min(dp[i - 1][1], dp[i - 1][2]);
 	}
-	cout << min({ cost[n][1], cost[n][2], cost[n][3] }) << "\n";
+	cout << min({ dp[n][1], dp[n][2], dp[n][3] }) << '\n';
 
 	return 0;
 }
